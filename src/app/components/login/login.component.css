@@ -1,0 +1,102 @@
+@import url('https://fonts.googleapis.com/css2?family=Robot&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Baloo+Bhaina+2&display=swap');
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.login-container {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    width: 300px;
+}
+
+h2 {
+    text-align: center;
+    color: #333;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+.input-group {
+    margin-bottom: 15px;
+    
+}
+
+
+
+input {
+    padding: 8px;
+    border: none;
+    border-bottom: 1px solid black;
+    font-size: 12px;
+    width: 270px;
+    margin: 10px;
+    
+}
+.forgot-password{
+    margin-left: 180px;
+    font-size:15px;
+    padding-bottom: 4px;
+}
+
+button {
+    background-color: #007bff;
+    color: #fff;
+    margin-top: 10px;
+    border: none;
+    padding: 10px;
+    border-radius: 10px;
+    font-size: 16px;
+    cursor: pointer;
+    width: 300px;
+    
+}
+
+button:hover {
+        background-color: #0056b3;
+    
+}
+
+.options {
+    display: flex;
+    align-items: center;
+    font-size: 14px;
+    margin-left: 40px;
+
+}
+
+.signup-link,
+.forgot-password {
+    color: #007bff;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+.signup-link:hover,
+.forgot-password:hover {
+    text-decoration: underline;
+}
+
+.font-1{
+    font-family:'Baloo Bhaina 2', cursive; 
+    
+}
+.font-2{
+    font-family:'Roboto', sans-serif ;
+}
+.welcome{
+    position: absolute;
+    top:0;
+}

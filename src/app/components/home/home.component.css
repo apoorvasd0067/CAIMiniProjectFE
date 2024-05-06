@@ -1,0 +1,244 @@
+@import url('https://fonts.googleapis.com/css2?family=Robot&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Baloo+Bhaina+2&display=swap');
+*{
+    margin:0;
+    padding:0;
+}
+
+
+/*------*/
+.max-width-1{
+    max-width: 80vw;
+
+}
+.max-width-2{
+    max-width: 60vw;
+
+}
+.m-auto{
+    margin:auto;
+}
+
+.font-1{
+    font-family:'Baloo Bhaina 2', cursive; ;
+}
+.font-2{
+    font-family:'Roboto', sans-serif ;
+}
+/*----------*/
+
+.navigation{
+    /*background-color: red;*/
+    font-family: 'Baloo Bhaina 2', cursive;;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height:90px;
+    
+    
+
+}
+.content{
+    height: 430px;
+    display: flex;
+    margin-top: 32px;
+    padding: 9px;
+
+
+}
+
+.footer{
+    height: 50px;
+    /*background-color: blueviolet;*/
+
+}
+
+.btn{
+padding:0px 15px;
+border: 3px solid black;
+border-radius: 4px;
+font-size: 16px;
+font-family:'Baloo Bhaina 2', cursive;;
+cursor: pointer;
+background-color: white;
+
+}
+.btn:hover{
+    color: white;
+    background-color:#80baf7;
+}
+.nav-left{
+    font-size: 20px;
+    display: flex;
+
+}
+.nav-left span{
+    color: #007bff;
+    font-weight: bolder;
+    font-size: 30px;
+}
+.nav-right ul{
+    display: flex;
+    align-items: center;
+    margin: 0 45px;
+    font-size: 16px;
+}
+.nav-right ul li{
+    list-style: none;
+    margin: 0 14px;
+    font-family: 'Roboto', sans-serif;
+
+}
+.nav-right ul li a:hover{
+    color:#4098f5;
+
+}
+.nav-right ul a{
+    text-decoration: none;
+    color: black;
+}
+
+/* .form-input{ 
+    padding:0px 5px;
+    font-size: 16px;
+    border:2px solid black;
+    border-radius:4px ;
+    margin:0 13px;
+    font-family:'Baloo Bhaina 2', cursive;;
+    
+
+}
+*/
+
+.content-left{
+    font-family: 'Baloo Bhaina 2', cursive;
+    width: 40%;
+    margin-right:30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+}
+.content-right{
+    width: 60%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right:0px;
+
+}
+.content-right img{
+    height:400px;
+    margin-right: 0;
+    padding-right: 0;
+    
+
+}
+.home-articles{
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    margin-top: 20px;
+
+    
+
+}
+.home-article{
+height: auto;
+width: 30%;
+margin:14px 50px;
+background-color: #edf2f7;
+ /* background-color: #fff;  */
+    padding: 40px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+.home-article .title{
+    /* text-align: center; */
+    padding: 10px;
+    font-weight: bolder;
+    font-size: 23px;
+}
+.home-article .btn-1{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 20px;
+    margin-left: 10px;
+    
+}
+.btn-1 button{
+    margin-top: 10px;
+    font-family:'Baloo Bhaina 2' ;
+    color: #fff;
+    border: none;
+    padding: 5px;
+    border-radius: 4px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    width: 100px;
+}
+.btn-1 .edit{
+    background-color: #007bff;
+}
+
+.btn-1 .edit:hover {
+    background-color: #0056b3;
+}
+    
+.home-article .desc{
+    padding: 10px;
+    
+}
+.link{
+    display: flex;
+    margin-left: 10px;
+
+}
+.link p{
+    font-weight: 600;
+}
+.link a{
+    align-items: center;
+    color: #007bff;
+    text-decoration: none;
+    font-weight: bolder;
+    }
+
+.link a:hover
+ {
+    text-decoration: underline;
+}
+.mb{
+    text-align: center;
+    margin-top: 30px;
+    font-size: 40px;
+    font-weight: bold;
+    
+}
+/* #read{
+    display: none;
+}
+#read:checked ~ .des{
+    display: block;
+
+
+}
+#read:checked~  label{
+    display: none;
+
+}
+.des{
+    display: none;
+}
+.ch label{
+    display:inline-block;
+    cursor: pointer;
+} */
+.btn-1 .delete{
+    background-color: rgb(247, 75, 75);
+} 
+.btn-1 .delete:hover{
+    background-color: rgb(244, 39, 39);
+}

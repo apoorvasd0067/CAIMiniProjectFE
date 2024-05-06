@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page</title>
+    <link rel="stylesheet" href="write.component.css">
+</head>
+<body>
+    <h1 class="welcome font-1">Create Your <span style="color:#007bff">Blog</span></h1>
+    <div class="container">
+    <div class="image-container">
+        <img src="assets\write.jpg" alt="">
+    </div>
+    <div class="blog-container">
+        <form action="home">
+            <div class="input-group font-2">
+                <label for="title">Blog Title</label>
+                <input type="text" id="title" name="title"  required>
+            </div>
+            <div class="input-group font-2">
+                <label for="description">Blog Description</label>
+                <textarea name="content" id="bContent" cols="50" rows="10" required></textarea>
+            </div>
+            <div class="input-group font-2">
+                <label for="url">Url</label>
+                <input type="url" id="url" name="url"  required>
+            </div>
+           
+            <div class="input-group">
+                <button class="font-2" type="submit">Save</button>
+            </div>
+            <a href="home" class="home font-1">Back To Home</a>
+            
+            
+        </form>
+    </div>
+</div>
+</body>
+</html>
+
