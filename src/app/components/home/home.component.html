@@ -43,113 +43,30 @@
        <div class="max-width-1 m-auto"><hr></div>
        <p id="myblog" class=" mb font-1">My Blog</p>
        <div  class="home-articles max-width-1 m-auto font-2">
-        <div class="home-article font-1">
-            <p class="title">Blog-0</p>
+        <ng-container *ngFor="let count of blogs">
+                    <div class="home-article font-1" *ngFor="let a of blogsdesc">
+            <p class="title">{{a.title}} {{count}}</p>
             <div class="des"></div>
-            <p class="desc">Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
-                sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                 Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris 
-                 nisi ut aliquip ex ea commodo consequat.
-                  Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore 
-                  eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, 
-                  sunt in culpa qui officia deserunt mollit anim id est laborum."</p>
-            
-                  <div class="link"><p>YouTube link:</p><a href="#"> url</a></div>
-            <div class="btn-1">
-                <a href="write"><button class="edit">Edit</button></a>
-                <button class="delete" (click)="confirmdel()">Delete</button>
+            <p class="desc">{{a.desc}}</p>
+                <div class="link"><p>YouTube link:</p><a href="#"> {{a.url}}</a></div>
+                <div class="btn-1">
+                <a href="write"><button class="edit">{{a.button[0]}}</button></a>
+                <button class="delete" (click)="confirmdel()">{{a.button[1]}}</button>
+            </div>
         </div>
-        </div>
-        <div class="home-article font-1">
-            <p class="title">Blog-1</p>
-            <p class="desc">Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
-                sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                 Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris 
-                 nisi ut aliquip ex ea commodo consequat.
-                  Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore 
-                  eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, 
-                  sunt in culpa qui officia deserunt mollit anim id est laborum."</p>
-            
-                  <div class="link"><p>YouTube link:</p><a href="#">url</a></div>
-            <div class="btn-1 ">
-                <a href="write"><button class="edit">Edit</button></a>
-                <button class="delete" (click)="confirmdel()">Delete</button>
-        </div>
-        </div>
-        <div class="home-article font-1">
+    </ng-container>
+
+    
             <!-- <input type="checkbox" id="read"> -->
             
-            <p class="title">Blog-2</p>
+        
             <!-- <div class="des"> -->
-            <p class="desc">Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
-                sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                 Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris 
-                 nisi ut aliquip ex ea commodo consequat.
-                  Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore 
-                  eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, 
-                  sunt in culpa qui officia deserunt mollit anim id est laborum."</p>
                   <!-- <label class="ch font-1" for="read">Read Less</label> -->
-                  <div class="link"><p>YouTube link:</p><a href="#">url</a></div>
+                  
                   <!-- </div> -->
                   
                   <!-- <label class="ch font-1" for="read">Read more</label> -->
-            <div class="btn-1">
-
-                <a href="write"><button class="edit">Edit</button></a>
-                <button class="delete" (click)="confirmdel()">Delete</button>
-        </div>
-        
-    </div>
-    <div class="home-article font-1">
-        <h3 class="title" >Blog-4</h3>
-        <p class="desc">Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
-            sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-             Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris 
-             nisi ut aliquip ex ea commodo consequat.
-              Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore 
-              eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, 
-              sunt in culpa qui officia deserunt mollit anim id est laborum."</p>
-        
-              <div class="link"><p>YouTube link:</p><a href="#">url</a></div>
-        <div class="btn-1">
-            <a href="write"><button class="edit">Edit</button></a>
-            <button class="delete" (click)="confirmdel()">Delete</button>
-    </div>
-    </div>
-    <div class="home-article font-1">
-        <p class="title">blog-5</p>
-        
-        <p class="desc">Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
-            sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-             Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris 
-             nisi ut aliquip ex ea commodo consequat.
-              Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore 
-              eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, 
-              sunt in culpa qui officia deserunt mollit anim id est laborum."</p>
-        
-              <div class="link"><p>YouTube link:</p><a href="#">url</a></div>
-        <div class="btn-1 font-1">
-        <a href="write"><button class="edit">Edit</button></a>
-        <button class="delete" (click)="confirmdel()">Delete</button>
-    </div>
-    </div>
-    <div class="home-article font-1">
-        <p class="title">Blog-6</p>
-        
-        <p class="desc">Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
-            sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-             Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris 
-             nisi ut aliquip ex ea commodo consequat.
-              Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore 
-              eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, 
-              sunt in culpa qui officia deserunt mollit anim id est laborum."</p>
-              <div class="link"><p>YouTube link:</p><a href="#">url</a></div>
-        <div class="btn-1">
-        <a href="write"><button class="edit">Edit</button></a>
-        <button class="delete" (click)="confirmdel()">Delete</button>
-    </div>
-    </div>
-    
+            
     
        </div>
 
