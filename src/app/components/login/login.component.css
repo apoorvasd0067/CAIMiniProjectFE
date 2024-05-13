@@ -43,6 +43,7 @@ input {
     font-size: 12px;
     width: 270px;
     margin: 10px;
+    margin-bottom: 0;
     
 }
 .forgot-password{
@@ -99,4 +100,10 @@ button:hover {
 .welcome{
     position: absolute;
     top:0;
+}
+small{
+    font-size: 11px;
+    color: red;
+    margin-top: 0;
+    margin-left: 10px;
 }

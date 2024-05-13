@@ -198,6 +198,7 @@ background-color: #edf2f7;
 }
 .link p{
     font-weight: 600;
+    padding-right: 5px;
 }
 .link a{
     align-items: center;
@@ -217,6 +218,15 @@ background-color: #edf2f7;
     font-weight: bold;
     
 }
+.id{
+   display: none; 
+}
+.email{
+    font-weight: 600;
+    margin-left: 10px;
+    padding-right: 10px;
+}
+
 /* #read{
     display: none;
 }

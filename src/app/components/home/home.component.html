@@ -43,18 +43,23 @@
        <div class="max-width-1 m-auto"><hr></div>
        <p id="myblog" class=" mb font-1">My Blog</p>
        <div  class="home-articles max-width-1 m-auto font-2">
-        <ng-container *ngFor="let count of blogs">
-                    <div class="home-article font-1" *ngFor="let a of blogsdesc">
-            <p class="title">{{a.title}} {{count}}</p>
-            <div class="des"></div>
-            <p class="desc">{{a.desc}}</p>
-                <div class="link"><p>YouTube link:</p><a href="#"> {{a.url}}</a></div>
+        <ng-container *ngFor="let item of blogs">
+        <div class="home-article font-1">
+            <p class="id">{{item.blogId}}</p>
+            <p class="title">{{item.title}}</p>
+            <p class="desc">{{item.description}}</p>
+                <div class="link"><p>YouTube link:</p><a href="{{item.link}}">My Blog Link</a></div>
+                <p><span class="email">Email:</span>{{item.email}}</p>
                 <div class="btn-1">
-                <a href="write"><button class="edit">{{a.button[0]}}</button></a>
-                <button class="delete" (click)="confirmdel()">{{a.button[1]}}</button>
+                <a href="write"><button class="edit">Edit</button></a>
+                <button class="delete" (click)="deleteblog(item.blogId!)">Delete</button>
             </div>
+        
         </div>
     </ng-container>
+    
+    
+    
 
     
             <!-- <input type="checkbox" id="read"> -->

@@ -13,18 +13,22 @@
         <img src="assets\write.jpg" alt="">
     </div>
     <div class="blog-container">
-        <form action="home">
+        <form [formGroup]="blogForm" (ngSubmit)="createBlog()">
             <div class="input-group font-2">
                 <label for="title">Blog Title</label>
-                <input type="text" id="title" name="title"  required>
+                <input formControlName="title" type="text" id="title" name="title"  required>
             </div>
             <div class="input-group font-2">
                 <label for="description">Blog Description</label>
-                <textarea name="content" id="bContent" cols="50" rows="10" required></textarea>
+                <textarea formControlName="description" name="content" id="bContent" cols="50" rows="10" required></textarea>
             </div>
             <div class="input-group font-2">
                 <label for="url">Url</label>
-                <input type="url" id="url" name="url"  required>
+                <input formControlName="link" type="url" id="url" name="url"  >
+            </div>
+            <div class="input-group font-2">
+                <label for="email">Use Email</label>
+                <input formControlName="email" type="text" id="email" name="title"  required>
             </div>
            
             <div class="input-group">

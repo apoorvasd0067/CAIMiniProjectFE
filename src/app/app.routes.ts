@@ -4,7 +4,7 @@ import { Component } from '@angular/core';
 import { RegisterComponent } from './components/register/register.component';
 import { HomeComponent } from './components/home/home.component';
 import { ForgotPasswordComponent } from './components/forgot-password/forgot-password.component';
-import { WriteComponent } from './components/write/write.component';
+import { WriteComponent } from './components/write/WriteComponent';
 
 export const routes: Routes = [
     {

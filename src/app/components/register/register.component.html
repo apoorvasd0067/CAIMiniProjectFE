@@ -9,24 +9,28 @@
 <body>
     <div class="login-container">
         <h2 class="font-2">Register</h2>
-        <form action="login">
+        <form  [formGroup]="signupForm" (ngSubmit)="onSignup()" autocomplete="off">
             <div class="input-group">
-                <input type="text" id="Fullname" name="Fullname" placeholder="Full Name" required>
+                <input formControlName="fullName"  type="text" id="Fullname" name="Fullname" placeholder="Full Name" required>
             </div>
+            <small *ngIf="signupForm.controls['fullName'].dirty && signupForm.hasError('required', 'fullName')">*Username is required</small>
             
             <div class="input-group">
-                <input type="email" id="email" name="email" placeholder="Email ID" required>
+                <input formControlName="email" type="email" id="email" name="email" placeholder="Email ID" required>
             </div>
+            <small *ngIf="signupForm.controls['email'].dirty && signupForm.hasError('required', 'email')">*Email is required</small>
             <div class="input-group">
-                <input type="password" id="password" name="password" placeholder="Password" required><br>
+                <input formControlName="password"  id="pass" type="password"  name="password" placeholder="Password" required><br>
+            </div>
+            <small *ngIf="signupForm.controls['password'].dirty && signupForm.hasError('required', 'password')">*password is required</small>
+             <div class="input-group">
+                <input formControlName="cPassword" type="password"  name="password" placeholder="Confirm Password" required><br>
                 
             </div>
-            <div class="input-group">
-                <input type="password" id="Cpassword" name="password" placeholder="Confirm Password" required><br>
-                
-            </div>
-            <div class="input-group">
-                <button class="font-2" type="submit">Sign Up</button>
+            <small *ngIf="signupForm.controls['cPassword'].dirty && signupForm.hasError('required', 'cPassword')">*confirm password is required</small> 
+            
+            <div class="input-group"> 
+                <button  class="font-2" type="submit">Sign Up</button>
             </div>
             <a href="login" class="login font-1">Back To Login</a>
         </form>
