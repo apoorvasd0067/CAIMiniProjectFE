@@ -5,6 +5,7 @@ import { RegisterComponent } from './components/register/register.component';
 import { HomeComponent } from './components/home/home.component';
 import { ForgotPasswordComponent } from './components/forgot-password/forgot-password.component';
 import { WriteComponent } from './components/write/WriteComponent';
+import { ModelComponent } from './components/shared/ui/model/model.component';
 
 export const routes: Routes = [
     {
@@ -27,6 +28,11 @@ export const routes: Routes = [
     {
         path:'write',
         component:WriteComponent
+    },
+    {
+        path:'model',
+        component:ModelComponent
+
     },
     {
         path: '', redirectTo: 'login', pathMatch: 'full'

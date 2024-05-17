@@ -7,15 +7,16 @@
     <link rel="stylesheet" href="home.component.css">
 </head>
 <body>
+    
         <nav class="navigation max-width-1 m-auto">
          <div class="nav-left">
             <span>iBlog</span>
-
+            
             </div>
          <div class="nav-right font-1">
             <ul>
                 <li><a href="home">Home</a></li>
-                <li><a href="home#myblog">My Blog</a></li>
+                <li><a href="home#myblog">Blog</a></li>
                 <li><a href="write">Write</a></li>
                 <li><a href="login">Logout</a></li>
             </ul>
@@ -41,7 +42,7 @@
        
        </div>
        <div class="max-width-1 m-auto"><hr></div>
-       <p id="myblog" class=" mb font-1">My Blog</p>
+       <p id="myblog" class=" mb font-1">Blogs</p>
        <div  class="home-articles max-width-1 m-auto font-2">
         <ng-container *ngFor="let item of blogs">
         <div class="home-article font-1">
@@ -51,7 +52,7 @@
                 <div class="link"><p>YouTube link:</p><a href="{{item.link}}">My Blog Link</a></div>
                 <p><span class="email">Email:</span>{{item.email}}</p>
                 <div class="btn-1">
-                <a href="write"><button class="edit">Edit</button></a>
+                    <a href="home#edit"><button (click)="item.blogId && loadBlog(item)"  class="edit">Edit</button></a>
                 <button class="delete" (click)="deleteblog(item.blogId!)">Delete</button>
             </div>
         
@@ -80,5 +81,10 @@
        </div>
 
     </body>
+    
+        
+    
 </html>
-
+<app-model [isOpen]="isModelOpen" (closeModel)="closeModel">
+<app-write id="edit" (onCloseModel)="closeModel()" [data]="blog"></app-write> 
+</app-model>

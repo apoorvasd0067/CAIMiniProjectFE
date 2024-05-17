@@ -1,19 +1,25 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import {NgFor, NgForOf} from "@angular/common";
 import { BlogService } from '../../services/blog.service';
 import { IBlog } from '../shared/models/Blog';
+import { WriteComponent } from '../write/WriteComponent';
+import { Router } from '@angular/router';
+import { ModelComponent } from '../shared/ui/model/model.component';
 
 
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [NgForOf],
+  imports: [NgForOf, WriteComponent, ModelComponent],
   templateUrl: './home.component.html',
   styleUrl: './home.component.css'
 })
 export class HomeComponent implements OnInit {
+  //@Input() usermail: string | null=null;
+  isModelOpen=false;
    blogs:IBlog[]=[];
-   constructor(private blogservice: BlogService){}
+   blog!:IBlog;
+   constructor(private blogservice: BlogService, private router:Router){}
 
 
   ngOnInit(): void {
@@ -37,14 +43,19 @@ deleteblog(id: any){
   });
   }
 } 
+ 
+loadBlog(data:IBlog){
+  this.blog=data;
+  this.openModel();
+}
 
-// }
-// openModel(){
-//   this.isModelOpen=true;
-// }
-// closeModel(){
-//   this.isModelOpen=false;
-// }
+openModel(){
+  this.isModelOpen=true;
+}
+closeModel(){
+  this.isModelOpen=false;
+  this.getAllBlogs()
+}
 }
 
 //   public confirmdel(){

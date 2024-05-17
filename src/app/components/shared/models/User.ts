@@ -9,3 +9,9 @@ export interface IUser{
   "password": string
   
 }
+export interface Ipass{
+  
+  "email": string,
+  "password": string
+  
+}

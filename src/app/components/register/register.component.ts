@@ -16,10 +16,13 @@ import {Router} from '@angular/router';
 })
 export class RegisterComponent {
   signupForm!:FormGroup;
+  isSubmitted: boolean = false;
   constructor(private fb:FormBuilder, private auth:AuthService, private router: Router){
+    const reg='[a-zA-z]*';
+    const emailreg='[a-zA-Z0-9]+\@[gmail|email]+\.com';
     this.signupForm=this.fb.group({
-      email: new FormControl('', [Validators.required]),
-      fullName:new FormControl('', [Validators.required]),
+      email: new FormControl('', [Validators.required, Validators.pattern(emailreg)]),
+      fullName:new FormControl('', [Validators.required, Validators.pattern(reg), Validators.minLength(3)]),
       password:new FormControl('', [Validators.required]),
      cPassword:new FormControl('', [Validators.required])
     })
@@ -31,7 +34,9 @@ export class RegisterComponent {
   }
 
   onSignup() {
-    
+    const isFormValid = this.signupForm.valid;
+    debugger;
+    this.isSubmitted =  true;
     
     //if(document.getElementById("pass").value == document.getElementById("cPassword").value){
      if (this.signupForm.valid) {
@@ -52,8 +57,9 @@ export class RegisterComponent {
             alert(res.message); // Handle successful registration response
             this.router.navigateByUrl('/login')
           },
-          error: (err) => {
-            alert(err?.error.message); // Handle registration error
+          error: () => {
+            alert("User already Exist.Please login!!"); // Handle registration error
+            this.router.navigateByUrl('/login')
           }
         });
        

@@ -7,39 +7,65 @@
     <link rel="stylesheet" href="write.component.css">
 </head>
 <body>
-    <h1 class="welcome font-1">Create Your <span style="color:#007bff">Blog</span></h1>
+    <div class="main">
+        <h1 class="welcome font-1">Create Your <span style="color:#007bff">Blog</span></h1>
     <div class="container">
+        
     <div class="image-container">
         <img src="assets\write.jpg" alt="">
     </div>
     <div class="blog-container">
         <form [formGroup]="blogForm" (ngSubmit)="createBlog()">
+           
             <div class="input-group font-2">
-                <label for="title">Blog Title</label>
+                <label for="title">Blog Title:</label>
                 <input formControlName="title" type="text" id="title" name="title"  required>
             </div>
+            <div class="text-danger" *ngIf="blogForm.controls['title'].invalid && ( blogForm.controls['title'].touched || blogForm.controls['title'].dirty || isSubmitted)">
+                <span *ngIf="blogForm.controls['title'].errors?.['required']">*Title is required</span>
+                <span *ngIf="blogForm.controls['title'].errors?.['pattern']">*Ivalid Title!!(only english alphbets , space and special characters like [! : & , . ' "] are allowed)</span><br>
+                <span *ngIf="blogForm.controls['description'].errors?.['minlength']">*Title should contain atleast 5 character</span>
+        
+             </div>
             <div class="input-group font-2">
-                <label for="description">Blog Description</label>
-                <textarea formControlName="description" name="content" id="bContent" cols="50" rows="10" required></textarea>
+                <label for="description">Blog Description:</label>
+                <textarea formControlName="description" name="content" id="bContent" cols="60" rows="10" required></textarea>
             </div>
+            <div class="text-danger" *ngIf="blogForm.controls['description'].invalid && ( blogForm.controls['description'].touched || blogForm.controls['description'].dirty || isSubmitted)">
+                <span *ngIf="blogForm.controls['description'].errors?.['required']">*Description is required</span>
+                <span *ngIf="blogForm.controls['description'].errors?.['pattern']">*Ivalid Description!(only english alphbets , space and special characters like [! : & , . ' "] are allowed)</span><br>
+                <span *ngIf="blogForm.controls['description'].errors?.['minlength']">*desciption should contain atleast 20 character</span>
+             </div>
             <div class="input-group font-2">
-                <label for="url">Url</label>
+                <label for="url">Blog Link:</label>
                 <input formControlName="link" type="url" id="url" name="url"  >
             </div>
+            <div class="text-danger" *ngIf="blogForm.controls['link'].invalid && ( blogForm.controls['link'].touched || blogForm.controls['link'].dirty || isSubmitted)">
+                <span *ngIf="blogForm.controls['link'].errors?.['required']">*Link is required</span>
+                <span *ngIf="blogForm.controls['link'].errors?.['pattern']">*Invalid Link!!(It should be "https://www.example.com" in format)</span>
+        
+             </div>
             <div class="input-group font-2">
-                <label for="email">Use Email</label>
+                <label for="email">User Email:</label>
                 <input formControlName="email" type="text" id="email" name="title"  required>
-            </div>
+            </div> 
+            <div class="text-danger" *ngIf="blogForm.controls['email'].invalid && ( blogForm.controls['email'].touched || blogForm.controls['email'].dirty || isSubmitted)">
+                <span *ngIf="blogForm.controls['email'].errors?.['required']">*Email is required</span>
+                <span *ngIf="blogForm.controls['email'].errors?.['pattern']">*Invalid Email!!(It should be in "username&#64;gmail/email.com" format)</span>
+             </div>
            
             <div class="input-group">
                 <button class="font-2" type="submit">Save</button>
+                <a href="home" class="home font-1">Back To Home</a>
+                
             </div>
-            <a href="home" class="home font-1">Back To Home</a>
+            
             
             
         </form>
     </div>
 </div>
+    </div>
 </body>
-</html>
 
+</html>

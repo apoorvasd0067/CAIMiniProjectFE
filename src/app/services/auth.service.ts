@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { APIResponse, IUser } from '../components/shared/models/User';
+import { APIResponse, IUser, Ipass } from '../components/shared/models/User';
 import { Observable } from 'rxjs';
 import {HttpClient} from "@angular/common/http"
 @Injectable({
@@ -18,9 +18,9 @@ export class AuthService {
     return this.http.post<any>(`${this.baseUrl}authenticate`,loginObj);
 
   }
-  //  updatePassword(id:string, userObj:IUser){
-  //   return this.http.put<any>(`${this.baseUrl}$id`,userObj);
+   updatePassword(email:string, userObj:Ipass){
+   return this.http.put<APIResponse<Ipass>>(`${this.baseUrl}${email}`,userObj);
 
-  // }
+  }
 }
 
